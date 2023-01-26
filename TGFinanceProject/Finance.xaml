@@ -50,23 +50,16 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition MinWidth="400" MaxWidth="500" Width="*"/>
-                    <ColumnDefinition Width="0.01*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- Deposit Sub Section -->
-                <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Deposit" Margin="0,20,0,0" Foreground="Black" FontSize="35" TextAlignment="Left" 
-                           Width="300" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" Grid.Row="1" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
-                         PlaceholderText="Title" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,130,0,0" Grid.Row="1" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
-                         PlaceholderText="£0.00" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
-                <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Grid.Row="1" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
-                        FontSize="25" CornerRadius="4" Content="Submit"  Foreground="Black" FontFamily="Tunga"/>
-
-                <!-- Withdraw Sub Section -->
                 <TextBlock HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="Deposit" Margin="0,20,0,0" Foreground="Black" FontSize="35" TextAlignment="Left" 
                            Width="300" FontFamily="Tunga"/>
                 <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" Grid.Row="1" Grid.Column="1" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
@@ -76,16 +69,26 @@
                 <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Grid.Row="1" Grid.Column="1" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
                         FontSize="25" CornerRadius="4" Content="Submit"  Foreground="Black" FontFamily="Tunga"/>
 
-                <!-- Transfer Sub Section -->
-                <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Text="Transfer" Margin="40,20,0,0" Foreground="Black" FontSize="35" TextAlignment="Left" 
-                           MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,80,0,0" Grid.Row="1" Grid.Column="2" MinWidth="130" MaxWidth="200" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
-                         PlaceholderText="Main" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,80,0,0" Grid.Row="1" Grid.Column="2" MinWidth="130" MaxWidth="200" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
-                         PlaceholderText="Savings" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,130,0,0" Grid.Row="1" Grid.Column="2" MinWidth="300" MaxWidth="500" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
+                <!-- Withdraw Sub Section -->
+                <TextBlock HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" Text="Withdraw" Margin="0,20,0,0" Foreground="Black" FontSize="35" TextAlignment="Left" 
+                           Width="300" FontFamily="Tunga"/>
+                <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0" Grid.Row="1" Grid.Column="3" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
+                         PlaceholderText="Title" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
+                <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,130,0,0" Grid.Row="1" Grid.Column="3" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
                          PlaceholderText="£0.00" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,180,0,0" Grid.Row="1" Grid.Column="2" MinWidth="300" MaxWidth="500" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
+                <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0" Grid.Row="1" Grid.Column="3" Width="300" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
+                        FontSize="25" CornerRadius="4" Content="Submit"  Foreground="Black" FontFamily="Tunga"/>
+
+                <!-- Transfer Sub Section -->
+                <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="5" TextWrapping="Wrap" Text="Transfer" Margin="40,20,0,0" Foreground="Black" FontSize="35" TextAlignment="Left" 
+                           MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,80,0,0" Grid.Row="1" Grid.Column="5" MinWidth="130" MaxWidth="200" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
+                         PlaceholderText="Main" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,80,0,0" Grid.Row="1" Grid.Column="5" MinWidth="130" MaxWidth="200" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
+                         PlaceholderText="Savings" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,130,0,0" Grid.Row="1" Grid.Column="5" MinWidth="300" MaxWidth="500" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
+                         PlaceholderText="£0.00" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="4" FontFamily="Tunga"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,180,0,0" Grid.Row="1" Grid.Column="5" MinWidth="300" MaxWidth="500" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
                         FontSize="25" CornerRadius="4" Content="Submit" Foreground="Black" FontFamily="Tunga"/>
             </Grid>
         </Border>
