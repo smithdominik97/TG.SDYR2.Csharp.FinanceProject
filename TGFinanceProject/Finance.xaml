@@ -92,5 +92,73 @@
                         FontSize="25" CornerRadius="4" Content="Submit" Foreground="Black" FontFamily="Tunga"/>
             </Grid>
         </Border>
+
+        <!-- Account selection section -->
+        <Border Background="LightBlue" Grid.Column="0" Grid.Row="1">
+            <Grid BorderBrush="Black" BorderThickness="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="350" MinHeight="200"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Scrollable account button section -->
+                <ScrollViewer Grid.Row="0" Background="CadetBlue">
+                    <ListView>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0" Grid.Row="1" Grid.Column="5" Width="275" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
+                        FontSize="25" Content="Main" Foreground="Black" FontFamily="Tunga"/>
+                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0" Grid.Row="1" Grid.Column="5" Width="275" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
+                        FontSize="25" Content="Savings" Foreground="Black" FontFamily="Tunga"/>
+                    </ListView>
+                </ScrollViewer>
+
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0" Grid.Row="1" Grid.Column="5" Width="30" Height="30" Background="White" BorderBrush="Black" BorderThickness="1" 
+                        FontSize="20" Content="-" Foreground="Black" FontFamily="Tunga"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0" Grid.Row="1" Grid.Column="5" Width="30" Height="30" Background="White" BorderBrush="Black" BorderThickness="1" 
+                        FontSize="20" Content="+" Foreground="Black" FontFamily="Tunga"/>
+            </Grid>
+        </Border>
+
+        <!-- History Of Transactions Section -->
+        <Border Background="RoyalBlue" Grid.Column="1" Grid.Row="1">
+            <Grid BorderBrush="Black" BorderThickness="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition MaxHeight="350" MinHeight="200"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="1000"/>
+                    <ColumnDefinition Width="0.015*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- History Of Transactions Section - Header -->
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1"  TextWrapping="Wrap" Text="History" Margin="0,0,0,0" Foreground="Black" FontSize="35" TextAlignment="Left" 
+                           MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
+
+                <!-- History Of Transactions Section - All, Deposits, Withdraws,Transfers tabs -->
+                <Border Background="Silver" Grid.Column="1" Grid.Row="2"/>
+                <Border Background="White" Grid.Column="1" Grid.Row="3"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" Height="40" Width="150" Background="White"
+                        FontSize="20" Content="All" Foreground="Black" FontFamily="Tunga"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="152,0,0,0" Grid.Row="2" Grid.Column="1" Height="40" Width="150" Background="White"
+                        FontSize="20" Content="Deposits" Foreground="Black" FontFamily="Tunga"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304,0,0,0" Grid.Row="2" Grid.Column="1" Height="40" Width="150" Background="White"
+                        FontSize="20" Content="Withdraws" Foreground="Black" FontFamily="Tunga"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="456,0,0,0" Grid.Row="2" Grid.Column="1" Height="40" Width="150" Background="White"
+                        FontSize="20" Content="Transfers" Foreground="Black" FontFamily="Tunga"/>
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>
