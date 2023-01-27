@@ -137,9 +137,9 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*" MinWidth="30"/>
                     <ColumnDefinition Width="1000"/>
-                    <ColumnDefinition Width="0.015*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- History Of Transactions Section - Header -->
@@ -147,7 +147,7 @@
                            MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
 
                 <!-- History Of Transactions Section - All, Deposits, Withdraws,Transfers tabs -->
-                <Border Background="Silver" Grid.Column="1" Grid.Row="2"/>
+                <Border Background="Silver" Grid.Column="1" Grid.Row="2" Grid.RowSpan="4"/>
                 <Border Background="White" Grid.Column="1" Grid.Row="3"/>
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" Height="40" Width="150" Background="White"
                         FontSize="20" Content="All" Foreground="Black" FontFamily="Tunga"/>
@@ -158,6 +158,25 @@
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="456,0,0,0" Grid.Row="2" Grid.Column="1" Height="40" Width="150" Background="White"
                         FontSize="20" Content="Transfers" Foreground="Black" FontFamily="Tunga"/>
 
+                <!-- History Of Transactions Section - Titles -->
+                <Border Background="White" Grid.Column="1" Grid.Row="4" Margin="0,2,0,0"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Title" Margin="220,2,0,0" Foreground="Black" FontSize="20" TextAlignment="Left" 
+                           MinWidth="400" MaxWidth="500" FontFamily="Tunga" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Amount" Margin="520,2,0,0" Foreground="Black" FontSize="20" TextAlignment="Left" 
+                           MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Date" Margin="800,2,0,0" Foreground="Black" FontSize="20" TextAlignment="Left" 
+                           MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Time" Margin="910,2,0,0" Foreground="Black" FontSize="20" TextAlignment="Left" 
+                           MinWidth="400" MaxWidth="500" FontFamily="Tunga"/>
+
+                <!-- History Of Transactions Section - Values -->
+                <ScrollViewer Grid.Column="1" Grid.Row="5" Background="Silver" Margin="0,2,0,0">
+                    <ListView>
+                        <Border Background="White" Width="380" Height="40">
+                            <TextBlock Text="hi" FontSize="18" Foreground="Black" FontFamily="Tunga" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                        </Border>
+                    </ListView>
+                </ScrollViewer>
             </Grid>
         </Border>
     </Grid>
