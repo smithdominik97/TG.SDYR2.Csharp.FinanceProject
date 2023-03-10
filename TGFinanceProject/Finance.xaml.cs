@@ -22,9 +22,31 @@ namespace TGFinanceProject
     /// </summary>
     public sealed partial class Finance : Page
     {
+        Account account = new Account();
+
         public Finance()
         {
             this.InitializeComponent();
+
+            
+            account.Balance = 250.34;
+            balanceValueText.Text = "£" + account.Balance;
+        }
+
+        //Deposit button
+        private void depositValueBTN(object sender, RoutedEventArgs e)
+        {
+            string value = depositValueText.Text;
+            account.Deposit(Convert.ToDouble(value));
+            balanceValueText.Text = "£" + account.Balance;
+        }
+
+        //Withdraw button
+        private void withdrawValueBTN(object sender, RoutedEventArgs e)
+        {
+            string value = withdrawValueText.Text;
+            account.Withdraw(Convert.ToDouble(value));
+            balanceValueText.Text = "£" + account.Balance;
         }
     }
 }

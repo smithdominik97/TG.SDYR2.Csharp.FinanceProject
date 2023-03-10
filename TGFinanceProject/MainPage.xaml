@@ -60,10 +60,10 @@
                            Width="490" FontFamily="Tunga"/>
                 <TextBlock HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Enter Credentials" Margin="0,150,0,0" Foreground="Black" FontSize="27" TextAlignment="Center" 
                            Width="490" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" Grid.Row="1" Width="400" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
+                <TextBox x:Name="idText" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" Grid.Row="1" Width="400" Height="40" Background="White" BorderBrush="Black" BorderThickness="1"
                          PlaceholderText="ID" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="9" FontFamily="Tunga"/>
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Grid.Row="1" Width="400" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
-                         PlaceholderText="Password" PlaceholderForeground="Gray" FontSize="25" TextAlignment="Left" CornerRadius="9" FontFamily="Tunga"/>
+                <PasswordBox  x:Name="passwordText" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Grid.Row="1" Width="400" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
+                         PlaceholderText="Password" FontSize="25"  CornerRadius="9" FontFamily="Tunga" />
                 <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,300,0,0" Grid.Row="1" Width="400" Height="40" Background="White" BorderBrush="Black" BorderThickness="1" 
                         FontSize="25" CornerRadius="9" Content="Submit" Click="ButtonLogin" Foreground="Black" FontFamily="Tunga"/>
                 <Image HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,365,0,0" Grid.Row="1" Width="300"  Source="/Assets/flourish1.png"/>
