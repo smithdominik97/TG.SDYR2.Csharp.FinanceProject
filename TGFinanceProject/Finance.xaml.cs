@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,7 +23,8 @@ namespace TGFinanceProject
     /// </summary>
     public sealed partial class Finance : Page
     {
-        Account account = new Account();
+        Account account = new Account();//Instantiate Account object called account
+        Regex regex = new Regex(@"^\d+(\.\d{1,2})?$"); //Set up regex to only accept numbers and decimal values. - Validation uses.
 
         public Finance()
         {
@@ -37,6 +39,8 @@ namespace TGFinanceProject
         private async void depositValueBTN(object sender, RoutedEventArgs e)
         {
             string value = depositValueText.Text;
+
+            // Check for valid input
             if (string.IsNullOrWhiteSpace(value))
             {
                 // Display an error message for blank space
@@ -48,10 +52,20 @@ namespace TGFinanceProject
                 };
 
                 await errorDialog.ShowAsync();
-            }else{
-                account.Deposit(Convert.ToDouble(value));
-                balanceValueText.Text = "£" + account.Balance.ToString("0.00");
-            }
+            }else if(!regex.IsMatch(value)){
+                // Display an error message for invalid input - Anything that isnt a number or decimal value.
+                ContentDialog errorDialog = new ContentDialog
+                {
+                    Title = "Deposit Error",
+                    Content = "Invalid value.\nPlease include a valid number with up to 2 decimal places.\nExamples: 5, 5.50, 50, 500.",
+                    CloseButtonText = "Ok"
+                };
+
+                await errorDialog.ShowAsync();
+                } else {
+                    account.Deposit(Convert.ToDouble(value));
+                    balanceValueText.Text = "£" + account.Balance.ToString("0.00");
+                }
         }
 
         //Withdraw button
@@ -65,6 +79,16 @@ namespace TGFinanceProject
                 {
                     Title = "Withdraw Error",
                     Content = "Invalid value.\nPlease include a value.\nExamples: 5, 5.50, 50, 500.",
+                    CloseButtonText = "Ok"
+                };
+
+                await errorDialog.ShowAsync();
+            }else if (!regex.IsMatch(value)){
+                // Display an error message for invalid input - Anything that isnt a number or decimal value.
+                ContentDialog errorDialog = new ContentDialog
+                {
+                    Title = "Deposit Error",
+                    Content = "Invalid value.\nPlease include a valid number with up to 2 decimal places.\nExamples: 5, 5.50, 50, 500.",
                     CloseButtonText = "Ok"
                 };
 
