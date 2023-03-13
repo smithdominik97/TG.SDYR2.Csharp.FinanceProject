@@ -36,7 +36,7 @@ namespace TGFinanceProject
             string password = passwordText.Password;
 
             // Check if the login details are correct
-            if (username == "admin" && password == "password")
+            if (username == "tg" && password == "tg")
             {
                 // Navigate to the main page of the application
                 Frame.Navigate(typeof(Finance));
