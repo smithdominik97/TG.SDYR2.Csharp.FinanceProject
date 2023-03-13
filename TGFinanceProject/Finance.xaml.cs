@@ -71,7 +71,9 @@ namespace TGFinanceProject
         //Withdraw button
         private async void withdrawValueBTN(object sender, RoutedEventArgs e)
         {
+            //passes value from withdraw text box.
             string value = withdrawValueText.Text;
+
             if (string.IsNullOrWhiteSpace(value))
             {
                 // Display an error message for blank space
@@ -83,17 +85,31 @@ namespace TGFinanceProject
                 };
 
                 await errorDialog.ShowAsync();
-            }else if (!regex.IsMatch(value)){
+            }
+            else if (!regex.IsMatch(value))
+            {
                 // Display an error message for invalid input - Anything that isnt a number or decimal value.
                 ContentDialog errorDialog = new ContentDialog
                 {
-                    Title = "Deposit Error",
+                    Title = "Withdraw Error",
                     Content = "Invalid value.\nPlease include a valid number with up to 2 decimal places.\nExamples: 5, 5.50, 50, 500.",
                     CloseButtonText = "Ok"
                 };
 
                 await errorDialog.ShowAsync();
-            }else{
+            }else if (account.Balance < Convert.ToDouble(value))
+            {
+                // Display an error message for not enough funds.
+                ContentDialog errorDialog = new ContentDialog
+                {
+                    Title = "Withdraw Error",
+                    Content = "Insufficient Funds.\nPlease make sure you have enough money to withdraw.",
+                    CloseButtonText = "Ok"
+                };
+
+                await errorDialog.ShowAsync();
+            }else
+            {
                 account.Withdraw(Convert.ToDouble(value));
                 balanceValueText.Text = "£" + account.Balance.ToString("0.00");
             }

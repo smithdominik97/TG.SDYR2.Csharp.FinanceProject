@@ -27,7 +27,7 @@ namespace TGFinanceProject
                 throw new Exception("Invalid withdrawal amount");
             } else if(Balance < value)
                 {
-                    throw new Exception("Insufficient funds");
+                throw new Exception("Insufficient funds");
             }
             else{ Balance -= value; }
         }
