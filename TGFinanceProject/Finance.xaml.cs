@@ -34,19 +34,45 @@ namespace TGFinanceProject
         }
 
         //Deposit button
-        private void depositValueBTN(object sender, RoutedEventArgs e)
+        private async void depositValueBTN(object sender, RoutedEventArgs e)
         {
             string value = depositValueText.Text;
-            account.Deposit(Convert.ToDouble(value));
-            balanceValueText.Text = "£" + account.Balance;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                // Display an error message for blank space
+                ContentDialog errorDialog = new ContentDialog
+                {
+                    Title = "Deposit Error",
+                    Content = "Invalid value.\nPlease include a value.\nExamples: 5, 5.50, 50, 500.",
+                    CloseButtonText = "Ok"
+                };
+
+                await errorDialog.ShowAsync();
+            }else{
+                account.Deposit(Convert.ToDouble(value));
+                balanceValueText.Text = "£" + account.Balance.ToString("0.00");
+            }
         }
 
         //Withdraw button
-        private void withdrawValueBTN(object sender, RoutedEventArgs e)
+        private async void withdrawValueBTN(object sender, RoutedEventArgs e)
         {
             string value = withdrawValueText.Text;
-            account.Withdraw(Convert.ToDouble(value));
-            balanceValueText.Text = "£" + account.Balance;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                // Display an error message for blank space
+                ContentDialog errorDialog = new ContentDialog
+                {
+                    Title = "Withdraw Error",
+                    Content = "Invalid value.\nPlease include a value.\nExamples: 5, 5.50, 50, 500.",
+                    CloseButtonText = "Ok"
+                };
+
+                await errorDialog.ShowAsync();
+            }else{
+                account.Withdraw(Convert.ToDouble(value));
+                balanceValueText.Text = "£" + account.Balance.ToString("0.00");
+            }
         }
     }
 }
