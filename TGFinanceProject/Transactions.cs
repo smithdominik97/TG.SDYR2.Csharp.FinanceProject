@@ -25,8 +25,8 @@ namespace TGFinanceProject
         }
 
         //Get and set the date and time the transaction happened.
-        public DateTime dateTimeValue_;
-        public DateTime DateTimeValue 
+        public String dateTimeValue_;
+        public String DateTimeValue 
         {
             get { return dateTimeValue_; }
             set { dateTimeValue_ = value; }
