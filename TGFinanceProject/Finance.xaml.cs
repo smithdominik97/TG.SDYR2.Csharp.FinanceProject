@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -20,11 +21,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace TGFinanceProject
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class Finance : Page
     {
+        ArrayList transactions = new ArrayList();
+        ObservableCollection<String> transactionList = new ObservableCollection<string>();
+
         Account account = new Account();//Instantiate Account object called account
         Regex regexNumbers = new Regex(@"^\d+(\.\d{1,2})?$"); //Set up regex to only accept numbers and decimal values. - Validation uses.
         Regex regexLetters = new Regex("^[A-Za-z ]+$"); //Set up regex to only accept letters - Validation uses.
