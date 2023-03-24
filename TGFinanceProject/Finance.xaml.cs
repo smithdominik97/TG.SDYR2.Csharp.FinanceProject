@@ -24,7 +24,7 @@ namespace TGFinanceProject
     public sealed partial class Finance : Page
     {
         ArrayList transactions = new ArrayList();
-        ObservableCollection<String> transactionList = new ObservableCollection<string>();
+        ObservableCollection<String> transactionList = new ObservableCollection<String>();
 
         Account account = new Account();//Instantiate Account object called account
         Regex regexNumbers = new Regex(@"^\d+(\.\d{1,2})?$"); //Set up regex to only accept numbers and decimal values. - Validation uses.
@@ -34,7 +34,6 @@ namespace TGFinanceProject
         {
             this.InitializeComponent();
 
-            
             account.Balance = 250.34;
             balanceValueText.Text = "£" + account.Balance;
         }
@@ -112,6 +111,10 @@ namespace TGFinanceProject
                 //Successful validation of values.
                 account.Deposit(Convert.ToDouble(value));
                 balanceValueText.Text = "£" + account.Balance.ToString("0.00");
+
+                //add to arraylist
+                transactionList.Add(thisTransaction);
+                //transactionList.Add(thisTransaction.ToString());
             }
         }
 
@@ -203,7 +206,16 @@ namespace TGFinanceProject
                 //Successful validation of values.
                 account.Withdraw(Convert.ToDouble(value));
                 balanceValueText.Text = "£" + account.Balance.ToString("0.00");
+
+                //add to arraylist
+                transactions.Add(thisTransaction);
+                transactionList.Add(thisTransaction.ToString());
             }
+        }
+
+        private void CreateTicket(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

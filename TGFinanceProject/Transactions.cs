@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TGFinanceProject
 {
@@ -30,6 +32,13 @@ namespace TGFinanceProject
         {
             get { return dateTimeValue_; }
             set { dateTimeValue_ = value; }
+        }
+
+        public override string ToString()
+        {
+            return String.Format($"Title: {Title} \n" +
+                $"Amount: {Amount} \n" +
+                $"Date: {DateTimeValue}\n");
         }
     }
 }
